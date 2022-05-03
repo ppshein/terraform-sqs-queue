@@ -70,6 +70,9 @@ task_infraApply() {
   terraform init
   terraform workspace select $workspace || terraform workspace new $workspace
   terraform apply plan.out
+
+  # output apiKey
+  # terraform output apiKey
 }
 
 # Plan Destroy infrastructure

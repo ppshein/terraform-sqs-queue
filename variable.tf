@@ -50,6 +50,7 @@ variable "lambda" {
     output_path      = string # output path of after zipping
     path_source_code = string # path of source code
     log_retention    = number # retention period for cloudwatch logs
+    handler          = string
   })
 }
 
@@ -66,5 +67,17 @@ variable "kinesis" {
     name             = ""
     retention_period = 48
     shard_count      = 1
+  }
+}
+
+
+# declare glue attribute here
+variable "glue" {
+  description = "The attribute of glue information"
+  type = object({
+    name = string
+  })
+  default = {
+    name = ""
   }
 }
